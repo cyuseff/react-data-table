@@ -1,0 +1,37 @@
+@import "vars";
+@import "utility";
+@import "base";
+
+@import "components/table";
+@import "components/pagination";
+@import "components/filter_bar";
+
+$avatar-h: 50px;
+.avatar {
+    display: block;
+    width: $avatar-h;
+    height: $avatar-h;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-color: #eee;
+    float: left;
+    margin-right: $sp-xs;
+}
+
+.network-icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &.facebook {
+        background-image: url("https://cloud-qa.zerofox.com/static/app/assets/icons/icon-facebook-color.svg");
+    }
+
+    &.slack {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png");
+    }
+}

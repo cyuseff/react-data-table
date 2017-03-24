@@ -1,0 +1,34 @@
+.ui-table {
+    background-color: #fff;
+    .ui-row {
+        display: flex;
+        &:hover {
+            background-color: rgba(0,0,0,.02);
+        }
+
+        .col {
+            flex: 1;
+            min-width: 100px;
+            padding: $sp-xs $sp;
+
+            border-top: $border;
+            border-left: $border;
+            &:last-child { border-right: $border; }
+
+            > * {
+                vertical-align: middle;
+            }
+        }
+
+        &:last-child {
+            .col { border-bottom: $border; }
+        }
+
+        &.header {
+            background-color: rgba(0,0,0,.02);
+            .col {
+                font-weight: 600;
+            }
+        }
+    }
+}

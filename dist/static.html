@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React DataTable</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Static Datatable Demo</h1>
+
+    <div class="padding-all">
+      <div id="root"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bundle.js"></script>
+
+    <script>
+        var cols = [
+            {
+                key: 'id',
+                name: 'ID'
+            },
+            {
+                key: 'timestamp',
+                name: 'Timestamp',
+                template: function(row) {
+                    return moment(row.timestamp).fromNow()
+                }
+            },
+            {
+                key: 'entity',
+                name: 'Entity',
+                template: function(row) {
+                    return '<h4>' + row.entity.name + '</h4>';
+                }
+            },
+            {
+                key: 'network',
+                name: 'Network'
+            },
+            {
+                key: 'severity',
+                name: 'Severity'
+            }
+        ];
+
+        var filters = [
+            {
+                type: 'DropDownFilter',
+                key: 'severity',
+                label: 'Risk Rating',
+                multiple: true,
+                opts: [
+                    { label: 'High', value: '4' },
+                    { label: 'Medium', value: '3' },
+                    { label: 'Low', value: '2' },
+                    { label: 'Info', value: '1' }
+                ]
+            }
+        ];
+
+        var params = {
+            cols: cols,
+            filters: filters,
+            url: "https://api-qa.zerofox.com/1.0/notifications/",
+            rowKey: "id",
+            mapData: function(obj) {
+                return obj.notifications;
+            }
+        };
+
+        ReactDOM.render(
+            React.createElement(Datatable, params),
+            document.getElementById('root')
+        );
+    </script>
+
+  </body>
+</html>

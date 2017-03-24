@@ -1,0 +1,32 @@
+.ui-pagination {
+    display: inline-block;
+    float: right;
+
+    >small {
+        display: inline-block;
+        margin-right: $sp-sm;
+        color: #999999;
+    }
+
+    >ul {
+        display: inline-block;
+        padding: 0;
+        >li {
+            display: inline-block;
+            padding: $sp-min $sp-xs;
+            border: $border;
+            cursor: pointer;
+
+            color: #0085ff;
+            &:hover {
+                background-color: rgba(0,0,0,.02);
+                color: #006cc5;
+            }
+
+            &[disabled] {
+                color: #999999!important;
+                pointer-events: none;
+            }
+        }
+    }
+}
