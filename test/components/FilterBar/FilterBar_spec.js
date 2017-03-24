@@ -88,7 +88,7 @@ describe('FilterBar specs', () => {
             }
         });
 
-        it('FilterBar state "should.ready" should be false', () => {
+        it('FilterBar "state.ready" should be false', () => {
             expect(C.state).to.have.property('ready', false);
         });
 

@@ -13,7 +13,6 @@ const div = TestUtils.findRenderedDOMComponentWithTag(C, 'div');
 
 describe('TextCel spec', () => {
     it('Should be renderer', () => {
-        console.log(div);
         expect(div).to.exist;
     });
 

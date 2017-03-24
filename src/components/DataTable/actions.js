@@ -1,7 +1,7 @@
 import axios, { CancelToken } from 'axios';
 
 axios.defaults.headers.common['Content-Type'] = 'application/json';
-axios.defaults.headers.common['Authorization'] = TOKEN_HERE;
+axios.defaults.headers.common['Authorization'] = '';
 
 let cancel;
 
