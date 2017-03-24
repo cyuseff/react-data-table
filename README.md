@@ -28,7 +28,7 @@ Run test in watch mode:
 - cols (array)
 - filters: (array)
 
-# Cols
+# Columns
 Array of objects.
 
     const cols = [{ key: 'id', name: 'ID' }]
